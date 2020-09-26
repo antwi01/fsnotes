@@ -1,7 +1,7 @@
 Pods
 *.xcuserstate
 xcuserdata
-Podfile.lock
+/Podfile.lock
 FSNotes.xcworkspace/xcshareddata/*
 FSNotes.xcworkspace/xcuserdata/*
 FSNotes.xcodeproj/xcuserdata/*
