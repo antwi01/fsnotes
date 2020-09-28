@@ -12,3 +12,6 @@ You have 3 options:
 2. Clone this repo and built it yourself (requires a Mac with Xcode and an Apple Developer account)
 3. Use the included bitrise.yml file to build this app on Bitrise (requires a Bitrise account and an Apple Developer account)
 
+# Notes
+
+There are a few screenshots of this app running on an iPad mini in the veacode-output directory.  There is also a screenshot of the end of a Bitrise build.
