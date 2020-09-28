@@ -14,4 +14,4 @@ You have 3 options to run a static scan:
 
 # Notes
 
-There are a few screenshots of this app running on an iPad mini in the `veracode-output` directory.  There is also a screenshot of the end of a Bitrise build.
+There are a few screenshots of this app running on an iPad mini in the `veracode-docs` directory.  There is also a screenshot of the end of a Bitrise build.
