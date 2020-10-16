@@ -63,9 +63,7 @@ workflows:
 
             echo "Uploading to Veracode for scanning"
             java -jar VeracodeJavaAPI.jar -vid $VERACODE_API_ID -vkey $VERACODE_API_KEY -action UploadAndScan -appname "FSNotes" -createprofile false -filepath Archive.bca -version "Bitrise build:$BITRISE_BUILD_NUMBER"
-    - deploy-to-bitrise-io@1:
-      inputs:
-      - deploy_path: "$BITRISE_XCARCHIVE_PATH/Archive.bca"
+
     - script@1:
         title: Veracode SCA scan
         inputs:
