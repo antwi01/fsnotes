@@ -34,6 +34,9 @@ workflows:
             # write your script here
             echo "Archiving for Veracode"
             # dbl-quotes to handle the space in the archive path
+            pwd
+            ls -l
+            echo $BITRISE_SOURCE_DIR
             cd "$BITRISE_XCARCHIVE_PATH"
 
             # sanity check
@@ -47,9 +50,11 @@ workflows:
             zip -r Archive.bca *
 
             # add the Podfile.lock for SCA
-            zip Archive.zip "$BITRISE_SOURCE_DIR/Podfile.lock"
+            ls -l "$BITRISE_SOURCE_DIR"
+            zip -j Archive.zip "$BITRISE_SOURCE_DIR/Podfile.lock"
 
             # sanity check
+            echo "Archive contents:"
             unzip -l Archive.bca
 
             # get the Veracode API wrapper
