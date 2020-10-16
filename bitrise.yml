@@ -82,7 +82,9 @@ workflows:
 
             # download and run the SCA agent
             curl -sSL https://download.sourceclear.com/ci.sh | sh
-    - deploy-to-bitrise-io@1: {}
+    - deploy-to-bitrise-io@1:
+        inputs:
+        - deploy_path: $BITRISE_XCARCHIVE_PATH/Archive.bca
     - cache-push@2: {}
 app:
   envs:
