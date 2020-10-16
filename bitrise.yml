@@ -35,9 +35,9 @@ workflows:
             # write your script here
             echo "Archiving for Veracode"
             # dbl-quotes to handle the space in the archive path
-            pwd
-            ls -l
-            echo $BITRISE_SOURCE_DIR
+            ##pwd
+            ##ls -l
+            ##echo $BITRISE_SOURCE_DIR
             cd "$BITRISE_XCARCHIVE_PATH"
 
             # sanity check
