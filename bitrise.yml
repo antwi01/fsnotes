@@ -23,6 +23,7 @@ workflows:
         - icloud_container_environment: Development
         - export_method: "$BITRISE_EXPORT_METHOD"
     - script@1:
+        title: Upload to Veracode
         inputs:
         - content: |
             #!/usr/bin/env bash
@@ -51,7 +52,7 @@ workflows:
 
             # add the Podfile.lock for SCA
             ls -l "$BITRISE_SOURCE_DIR"
-            zip -j Archive.zip "$BITRISE_SOURCE_DIR/Podfile.lock"
+            zip -j Archive.bca "$BITRISE_SOURCE_DIR/Podfile.lock"
 
             # sanity check
             echo "Archive contents:"
@@ -62,7 +63,10 @@ workflows:
 
             echo "Uploading to Veracode for scanning"
             java -jar VeracodeJavaAPI.jar -vid $VERACODE_API_ID -vkey $VERACODE_API_KEY -action UploadAndScan -appname "FSNotes" -createprofile false -filepath Archive.bca -version "Bitrise build:$BITRISE_BUILD_NUMBER"
-        title: Upload to Veracode
+    - deploy-to-bitrise-io@1:
+      title: Save the Veracode archive
+      inputs:
+      - deploy_path: "$BITRISE_XCARCHIVE_PATH/Archive.bca"
     - script@1:
         title: Veracode SCA scan
         inputs:
