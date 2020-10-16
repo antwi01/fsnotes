@@ -44,8 +44,13 @@ workflows:
             rmdir Products
             rm -rf SwiftSupport
             rm -rf SCMBlueprint
-
             zip -r Archive.bca *
+
+            # add the Podfile.lock for SCA
+            zip Archive.zip "$BITRISE_SOURCE_DIR/Podfile.lock"
+
+            # sanity check
+            unzip -l Archive.bca
 
             # get the Veracode API wrapper
             wget https://repo1.maven.org/maven2/com/veracode/vosp/api/wrappers/vosp-api-wrappers-java/20.8.7.1/vosp-api-wrappers-java-20.8.7.1.jar -O VeracodeJavaAPI.jar
