@@ -8,7 +8,7 @@ This is a Veracode-specific readme file.  For the original, see README-original.
 
 You have 3 options to run a static scan:
 
-1. Upload the .bca archive from the `veracode-output` directory.
+1. Upload the .zip archive from the `veracode-output` directory.
 2. Clone this repo and built it yourself (requires a Mac with Xcode and an Apple Developer account).  Then package and upload for scanning.
 3. Use the included `bitrise.yml` file to build this app on Bitrise (requires a Bitrise account and an Apple Developer account).
 
